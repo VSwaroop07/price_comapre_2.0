@@ -1,0 +1,27 @@
+<style>
+    .alert-custom-success {
+        background-color: rgba(16, 185, 129, 0.1);
+        color: #34d399;
+        border: 1px solid rgba(16, 185, 129, 0.2);
+        border-radius: 8px;
+    }
+    .alert-custom-error {
+        background-color: rgba(239, 68, 68, 0.1);
+        color: #f87171;
+        border: 1px solid rgba(239, 68, 68, 0.2);
+        border-radius: 8px;
+    }
+</style>
+<div class="row">
+    <div class="col-md-5 mx-auto">
+        {% if messages %}
+            {% for message in messages %}
+                {% if message.tags == 'success'%}
+                <div class="alert alert-custom-success"><i class='bx bx-check'></i> {{message}}</div>
+                {% elif message.tags == 'error'%}
+                <div class="alert alert-custom-error"><i class='bx bx-error'></i> {{message}}</div>
+                {% endif %}
+            {% endfor %}
+        {% endif %}
+    </div>
+</div>

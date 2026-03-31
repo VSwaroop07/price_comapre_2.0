@@ -1,0 +1,15 @@
+<div class="col-md-3">
+        <div class="row mb-2">
+            <div class="col-md-3">
+                {% if i.tag == 'flipkart' %}
+                <img src="{% static 'images/flipkart.svg' %}" alt="flipkart" class="w-100">
+                {% else %}
+                <img src="{% static 'images/amazon.svg' %}" alt="amazon" class="w-100">
+                {% endif %}
+            </div>
+            <div class="col-md-9">
+                <h6 class="text-primary">{{ i.product_name }}</h6>
+                {{ i.price }}
+            </div>
+        </div>
+    </div>
