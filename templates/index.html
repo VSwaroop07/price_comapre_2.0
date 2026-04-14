@@ -113,7 +113,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <h1 class="fw-bold mb-3" style="color: var(--text-main); letter-spacing: -1px;">Find the Best Price, Faster.</h1>
-            <p class="mb-4" style="color: var(--text-muted); font-size: 1.1rem;">Search millions of products across Amazon, Flipkart, and Shopclues to find the smartest deals instantly.</p>
+            <p class="mb-4" style="color: var(--text-muted); font-size: 1.1rem;">Search millions of products across Amazon, Snapdeal, and Shopclues to find the smartest deals instantly.</p>
             
             <form action="{% url 'index' %}" method="post">
                 {% csrf_token %}
@@ -134,14 +134,16 @@
         <div class="col-6 col-md-4 col-lg-3">
             <div class="product-card">
                 <div class="brand-logo-container">
-                    {% if i.tag == 'flipkart' %}
-                        <img src="{% static 'images/flipkart.svg' %}" alt="Flipkart" class="brand-logo">
+                    {% if i.tag == 'amazon' %}
+                        <img src="{% static 'images/amazon.svg' %}" alt="Amazon" class="brand-logo" onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg'">
+                    {% elif i.tag == 'snapdeal' %}
+                        <img src="{% static 'images/snapdeal.png' %}" alt="Snapdeal" class="brand-logo">
                     {% elif i.tag == 'shopclues' %}
                         <img src="{% static 'images/shopclues.png' %}" alt="Shopclues" class="brand-logo">
+                    {% elif i.tag == 'flipkart' %}
+                        <img src="{% static 'images/flipkart.svg' %}" alt="Flipkart" class="brand-logo">
                     {% elif i.tag == 'croma' %}
                         <img src="{% static 'images/croma.png' %}" alt="Croma" class="brand-logo">
-                    {% elif i.tag == 'amazon' %}
-                        <img src="{% static 'images/amazon.svg' %}" alt="Amazon" class="brand-logo" onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg'">
                     {% endif %}
                 </div>
                 
